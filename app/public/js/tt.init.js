@@ -168,7 +168,7 @@ TT.Init = (function () {
       }
     });
 
-    /*
+    
     TT.Model.Column.add({
       name: 'Current',
       active: false,
@@ -176,7 +176,7 @@ TT.Init = (function () {
         return story.current_iteration === 0;
       }
     });
-
+/*
     TT.Model.Column.add({
       name: 'Backlog',
       active: false,

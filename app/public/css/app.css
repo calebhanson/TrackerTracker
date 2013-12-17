@@ -601,7 +601,9 @@ body.has-modal-dialog {
   font-weight: normal;
   padding-left: 5px;
 }
-
+#columnList .column-story-count:after {
+  content:" pts";
+}
 /* Columns */
 
 #content {
@@ -765,6 +767,10 @@ body.has-modal-dialog {
 .story .title {
   line-height: 15px;
   word-wrap: break-word;
+}
+
+.one_project .story .project-name{
+  display: none;
 }
 
 .story .project-name {

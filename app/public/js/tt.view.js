@@ -248,7 +248,9 @@ TT.View = (function () {
       if (column.filter && column.filter(story) &&
         TT.Model.Project.isActive({ id: story.project_id }) &&
         TT.Model.Story.isNotFiltered(story)) {
-        column.storyCount++;
+        if (parseInt(story.estimate)){
+          column.storyCount += parseInt(story.estimate);
+        }
         if (column.active) {
           pub.drawStory(story, column);
         }
@@ -266,7 +268,11 @@ TT.View = (function () {
         projectList.push(id);
       }
     });
-
+    if (projectList.length == 1){
+      $("#content").addClass("one_project");
+    } else {
+      $("#content").removeClass("one_project");
+    }
     TT.Utils.localStorage('projectList', projectList);
   };
 
