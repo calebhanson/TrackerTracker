@@ -248,8 +248,8 @@ TT.View = (function () {
       if (column.filter && column.filter(story) &&
         TT.Model.Project.isActive({ id: story.project_id }) &&
         TT.Model.Story.isNotFiltered(story)) {
-        if (parseInt(story.estimate)){
-          column.storyCount += parseInt(story.estimate);
+        if (parseInt(story.estimate, 10)) {
+          column.storyCount += parseInt(story.estimate, 10);
         }
         if (column.active) {
           pub.drawStory(story, column);
@@ -268,10 +268,10 @@ TT.View = (function () {
         projectList.push(id);
       }
     });
-    if (projectList.length == 1){
-      $("#content").addClass("one_project");
+    if (projectList.length === 1) {
+      $('#content').addClass('one_project');
     } else {
-      $("#content").removeClass("one_project");
+      $('#content').removeClass('one_project');
     }
     TT.Utils.localStorage('projectList', projectList);
   };
